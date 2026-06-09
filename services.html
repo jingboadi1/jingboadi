@@ -1,0 +1,1378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Comprehensive agricultural services - Agricultural Technology R&D, Fruit & Vegetable Cultivation, Agricultural Products Sales, Farm Management, and Mobile Management App.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://jingboadi.com/services.html">
+    <link rel="icon" type="image/svg+xml" href="images/logo.svg">
+    <title>Services | Beijing Jingbaodi Agricultural Science & Technology Co., Ltd.</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <style>
+        /* Services Page Specific Styles */
+        .services-hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            background: linear-gradient(135deg, #0a1628 0%, #1a365d 50%, #0d3d17 100%);
+        }
+
+        .services-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="hex" width="30" height="26" patternUnits="userSpaceOnUse"><path d="M15 0l15 8.66v17.32L15 34.64 0 26V8.66z" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23hex)"/></svg>');
+            animation: patternFloat 30s linear infinite;
+        }
+
+        @keyframes patternFloat {
+            from { background-position: 0 0; }
+            to { background-position: 100px 100px; }
+        }
+
+        .hero-particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: rgba(245, 166, 35, 0.6);
+            border-radius: 50%;
+            animation: particleFloat 15s infinite;
+        }
+
+        @keyframes particleFloat {
+            0%, 100% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh) rotate(720deg);
+                opacity: 0;
+            }
+        }
+
+        .hero-content-wrapper {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .hero-title-wrapper {
+            overflow: hidden;
+            margin-bottom: 2rem;
+        }
+
+        .hero-title-animated {
+            display: inline-block;
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 800;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            animation: titleReveal 1.5s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+            text-shadow: 0 0 60px rgba(245, 166, 35, 0.3);
+        }
+
+        @keyframes titleReveal {
+            from {
+                transform: translateY(100%) skewY(10deg);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0) skewY(0);
+                opacity: 1;
+            }
+        }
+
+        .hero-subtitle-wrapper {
+            overflow: hidden;
+        }
+
+        .hero-subtitle-animated {
+            display: block;
+            font-size: clamp(1rem, 2vw, 1.5rem);
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 700px;
+            margin: 0 auto;
+            animation: subtitleFade 1s ease 0.8s forwards;
+            opacity: 0;
+        }
+
+        @keyframes subtitleFade {
+            to { opacity: 1; }
+        }
+
+        .scroll-indicator-wrapper {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+        }
+
+        .scroll-indicator-line {
+            width: 2px;
+            height: 60px;
+            background: linear-gradient(to bottom, rgba(255,255,255,0.8), transparent);
+            margin: 0 auto;
+            animation: scrollLine 2s ease-in-out infinite;
+            position: relative;
+        }
+
+        .scroll-indicator-line::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 8px;
+            height: 8px;
+            background: #f5a623;
+            border-radius: 50%;
+            animation: scrollDot 2s ease-in-out infinite;
+        }
+
+        @keyframes scrollLine {
+            0%, 100% { opacity: 0.3; height: 60px; }
+            50% { opacity: 1; height: 80px; }
+        }
+
+        @keyframes scrollDot {
+            0%, 100% { top: 0; }
+            50% { top: calc(100% - 8px); }
+        }
+
+        /* Service Cards Section */
+        .services-grid-section {
+            padding: 8rem 0;
+            background: #f8f9fa;
+            position: relative;
+        }
+
+        .services-intro {
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+
+        .services-intro h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            color: #1a1a1a;
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .services-intro h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #1a5f2a, #f5a623);
+            border-radius: 2px;
+            animation: lineExpand 1s ease forwards;
+        }
+
+        @keyframes lineExpand {
+            from { width: 0; }
+            to { width: 80px; }
+        }
+
+        .services-intro p {
+            font-size: 1.125rem;
+            color: #666;
+            max-width: 600px;
+            margin: 2rem auto 0;
+        }
+
+        .services-cards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 2.5rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .service-card-3d {
+            perspective: 1000px;
+            height: 500px;
+        }
+
+        .service-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+            transform-style: preserve-3d;
+        }
+
+        .service-card-3d:hover .service-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .service-card-front,
+        .service-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-card-front {
+            background: #fff;
+        }
+
+        .service-card-back {
+            background: linear-gradient(135deg, #1a5f2a 0%, #2d8f47 100%);
+            transform: rotateY(180deg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .card-front-content {
+            padding: 2.5rem;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .card-icon-wrapper {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 2rem;
+            position: relative;
+        }
+
+        .card-icon-bg {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 50%;
+            animation: iconPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes iconPulse {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+        }
+
+        .card-icon {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #fff;
+            border-radius: 50%;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-icon svg {
+            width: 50px;
+            height: 50px;
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            color: #1a1a1a;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .card-description {
+            font-size: 1rem;
+            color: #666;
+            text-align: center;
+            line-height: 1.8;
+        }
+
+        .card-back-content {
+            text-align: center;
+            color: #fff;
+        }
+
+        .card-back-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: #fff;
+        }
+
+        .card-features-list {
+            list-style: none;
+            text-align: left;
+        }
+
+        .card-features-list li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            animation: featureSlide 0.5s ease forwards;
+            opacity: 0;
+        }
+
+        .service-card-3d:hover .card-features-list li {
+            opacity: 1;
+        }
+
+        .service-card-3d:hover .card-features-list li:nth-child(1) { animation-delay: 0.2s; }
+        .service-card-3d:hover .card-features-list li:nth-child(2) { animation-delay: 0.3s; }
+        .service-card-3d:hover .card-features-list li:nth-child(3) { animation-delay: 0.4s; }
+        .service-card-3d:hover .card-features-list li:nth-child(4) { animation-delay: 0.5s; }
+        .service-card-3d:hover .card-features-list li:nth-child(5) { animation-delay: 0.6s; }
+
+        @keyframes featureSlide {
+            from { transform: translateX(-20px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        .card-features-list svg {
+            width: 20px;
+            height: 20px;
+            fill: #f5a623;
+            flex-shrink: 0;
+        }
+
+        /* App Promotion Section */
+        .app-promotion-section {
+            padding: 8rem 0;
+            background: linear-gradient(135deg, #0d3d17 0%, #1a5f2a 50%, #0a1628 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .app-promotion-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(245, 166, 35, 0.1) 0%, transparent 50%);
+            animation: bgGlow 10s ease-in-out infinite;
+        }
+
+        @keyframes bgGlow {
+            0%, 100% { transform: translate(0, 0); }
+            50% { transform: translate(5%, 5%); }
+        }
+
+        .app-content-wrapper {
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .app-info-section h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            color: #fff;
+            margin-bottom: 1.5rem;
+            animation: textGlow 3s ease-in-out infinite;
+        }
+
+        @keyframes textGlow {
+            0%, 100% { text-shadow: 0 0 20px rgba(245, 166, 35, 0.3); }
+            50% { text-shadow: 0 0 40px rgba(245, 166, 35, 0.6); }
+        }
+
+        .app-info-section p {
+            font-size: 1.125rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .app-features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .app-feature-item {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+            animation: featureFloat 3s ease-in-out infinite;
+        }
+
+        .app-feature-item:nth-child(1) { animation-delay: 0s; }
+        .app-feature-item:nth-child(2) { animation-delay: 0.5s; }
+        .app-feature-item:nth-child(3) { animation-delay: 1s; }
+        .app-feature-item:nth-child(4) { animation-delay: 1.5s; }
+        .app-feature-item:nth-child(5) { animation-delay: 2s; }
+        .app-feature-item:nth-child(6) { animation-delay: 2.5s; }
+
+        @keyframes featureFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+
+        .app-feature-item:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .app-feature-item svg {
+            width: 30px;
+            height: 30px;
+            fill: #f5a623;
+            margin-bottom: 0.75rem;
+        }
+
+        .app-feature-item span {
+            display: block;
+            color: #fff;
+            font-size: 0.9rem;
+        }
+
+        .app-store-buttons-wrapper {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .app-store-btn {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 15px;
+            color: #fff;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .app-store-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .app-store-btn:hover::before {
+            left: 100%;
+        }
+
+        .app-store-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .app-store-btn svg {
+            width: 40px;
+            height: 40px;
+            fill: #fff;
+        }
+
+        .app-store-btn-text {
+            text-align: left;
+        }
+
+        .app-store-btn-text small {
+            font-size: 0.7rem;
+            opacity: 0.8;
+        }
+
+        .app-store-btn-text strong {
+            display: block;
+            font-size: 1.1rem;
+        }
+
+        /* Phone Mockup Section */
+        .phone-mockup-section {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .phone-container {
+            position: relative;
+        }
+
+        .phone-frame {
+            width: 300px;
+            height: 600px;
+            background: #000;
+            border-radius: 45px;
+            padding: 15px;
+            box-shadow: 0 50px 100px rgba(0, 0, 0, 0.5),
+                        inset 0 0 0 3px #333,
+                        0 0 0 6px #1a1a1a;
+            animation: phoneFloat 4s ease-in-out infinite;
+            position: relative;
+            z-index: 2;
+        }
+
+        @keyframes phoneFloat {
+            0%, 100% { transform: translateY(0) rotateY(-5deg) rotateX(5deg); }
+            50% { transform: translateY(-20px) rotateY(0deg) rotateX(0deg); }
+        }
+
+        .phone-screen-content {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, #1a5f2a 0%, #2d8f47 50%, #f5a623 100%);
+            border-radius: 35px;
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .phone-notch {
+            position: absolute;
+            top: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 25px;
+            background: #000;
+            border-radius: 0 0 20px 20px;
+        }
+
+        .phone-app-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 2rem;
+            animation: iconBounce 2s ease-in-out infinite;
+        }
+
+        @keyframes iconBounce {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .phone-app-icon svg {
+            width: 50px;
+            height: 50px;
+            fill: #fff;
+        }
+
+        .phone-text {
+            color: #fff;
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-align: center;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .phone-text small {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 400;
+            margin-top: 0.5rem;
+            opacity: 0.9;
+        }
+
+        /* Phone Glow Effect */
+        .phone-glow {
+            position: absolute;
+            width: 150%;
+            height: 150%;
+            background: radial-gradient(circle, rgba(26, 95, 42, 0.3) 0%, transparent 70%);
+            z-index: 1;
+            animation: glowPulse 3s ease-in-out infinite;
+        }
+
+        @keyframes glowPulse {
+            0%, 100% { opacity: 0.5; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.1); }
+        }
+
+        /* Stats Section */
+        .stats-section {
+            padding: 6rem 0;
+            background: #fff;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .stat-item-wrapper {
+            text-align: center;
+            padding: 2rem;
+            position: relative;
+        }
+
+        .stat-item-wrapper::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 1px;
+            height: 60%;
+            background: linear-gradient(to bottom, transparent, #ddd, transparent);
+        }
+
+        .stat-item-wrapper:last-child::after {
+            display: none;
+        }
+
+        .stat-number-wrapper {
+            position: relative;
+            display: inline-block;
+        }
+
+        .stat-number {
+            font-size: 4rem;
+            font-weight: 800;
+            color: #1a5f2a;
+            line-height: 1;
+            position: relative;
+        }
+
+        .stat-suffix {
+            font-size: 2rem;
+            color: #f5a623;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            color: #666;
+            margin-top: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .stat-underline {
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, #1a5f2a, #f5a623);
+            margin: 1rem auto 0;
+            border-radius: 2px;
+            animation: underlineExpand 1s ease forwards;
+            transform: scaleX(0);
+        }
+
+        @keyframes underlineExpand {
+            to { transform: scaleX(1); }
+        }
+
+        /* CTA Section */
+        .cta-section-services {
+            padding: 8rem 0;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section-services::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="40" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="0.5"/><circle cx="80" cy="80" r="50" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="0.5"/></svg>');
+        }
+
+        .cta-content-wrapper {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .cta-content-wrapper h2 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            color: #fff;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-content-wrapper p {
+            font-size: 1.25rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 3rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1.25rem 3rem;
+            background: linear-gradient(135deg, #1a5f2a 0%, #2d8f47 100%);
+            color: #fff;
+            font-size: 1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 40px rgba(26, 95, 42, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .cta-btn-primary:hover::before {
+            left: 100%;
+        }
+
+        .cta-btn-primary:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 60px rgba(26, 95, 42, 0.6);
+        }
+
+        .cta-btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1.25rem 3rem;
+            background: transparent;
+            color: #fff;
+            font-size: 1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            border-radius: 50px;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .cta-btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: #fff;
+            transform: translateY(-5px);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 1024px) {
+            .app-content-wrapper {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .phone-mockup-section {
+                order: -1;
+            }
+
+            .app-features-grid {
+                justify-content: center;
+                max-width: 400px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .stat-item-wrapper::after {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .services-cards-container {
+                grid-template-columns: 1fr;
+            }
+
+            .service-card-3d {
+                height: 450px;
+            }
+
+            .phone-frame {
+                width: 250px;
+                height: 500px;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .stat-number {
+                font-size: 3rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="loading"><div class="spinner"></div></div>
+
+    <header class="header" id="header">
+        <div class="container">
+            <nav class="nav" role="navigation" aria-label="Main navigation">
+                <a href="index.html" class="nav-logo">
+                    <img src="images/logo.svg" alt="Jingbaodi Logo" width="50" height="50">
+                    <span>Jingbaodi</span>
+                </a>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="services.html" class="nav-link active">Services</a></li>
+                    <li><a href="culture.html" class="nav-link">Culture</a></li>
+                    <li><a href="news.html" class="nav-link">News</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+                <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <div class="mobile-menu">
+        <ul class="mobile-menu-list">
+            <li><a href="index.html" class="mobile-menu-link">Home</a></li>
+            <li><a href="services.html" class="mobile-menu-link active">Services</a></li>
+            <li><a href="culture.html" class="mobile-menu-link">Culture</a></li>
+            <li><a href="news.html" class="mobile-menu-link">News</a></li>
+            <li><a href="contact.html" class="mobile-menu-link">Contact</a></li>
+        </ul>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="services-hero">
+        <div class="hero-particles">
+            <div class="particle" style="left: 10%; animation-delay: 0s;"></div>
+            <div class="particle" style="left: 20%; animation-delay: 2s;"></div>
+            <div class="particle" style="left: 30%; animation-delay: 4s;"></div>
+            <div class="particle" style="left: 40%; animation-delay: 1s;"></div>
+            <div class="particle" style="left: 50%; animation-delay: 3s;"></div>
+            <div class="particle" style="left: 60%; animation-delay: 5s;"></div>
+            <div class="particle" style="left: 70%; animation-delay: 2.5s;"></div>
+            <div class="particle" style="left: 80%; animation-delay: 1.5s;"></div>
+            <div class="particle" style="left: 90%; animation-delay: 4.5s;"></div>
+        </div>
+
+        <div class="hero-content-wrapper">
+            <div class="hero-title-wrapper">
+                <h1 class="hero-title-animated">Our Services</h1>
+            </div>
+            <div class="hero-subtitle-wrapper">
+                <p class="hero-subtitle-animated">Comprehensive Agricultural Solutions for Modern Farming - From cutting-edge technology research to field-level farming services, we provide end-to-end solutions for sustainable agriculture.</p>
+            </div>
+        </div>
+
+        <div class="scroll-indicator-wrapper">
+            <div class="scroll-indicator-line"></div>
+        </div>
+    </section>
+
+    <!-- Services Cards Section -->
+    <section class="services-grid-section">
+        <div class="services-intro scroll-animate">
+            <h2>What We Offer</h2>
+            <p>Explore our comprehensive range of agricultural services designed to transform and optimize your farming operations.</p>
+        </div>
+
+        <div class="services-cards-container">
+            <!-- Service Card 1: Agricultural R&D -->
+            <div class="service-card-3d scroll-animate">
+                <div class="service-card-inner">
+                    <div class="service-card-front">
+                        <div class="card-front-content">
+                            <div class="card-icon-wrapper">
+                                <div class="card-icon-bg"></div>
+                                <div class="card-icon">
+                                    <svg viewBox="0 0 24 24" fill="#1a5f2a">
+                                        <path d="M7 2v2h3v2H7v2H5V6H2V4h3V2h2zm5 0v2h3v2h-3v2H9V6H6V4h3V2h3zm5 0v6h2V4h-3v4h2v2h3V4h-4zM7 12v2h10v2H7v4h5v2H7v2h10v2H5v-2h7v-2H7v-4h7v-2H7v-2h5V10H7v2z"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <h3 class="card-title">Agricultural R&D</h3>
+                            <p class="card-description">Our dedicated research team continuously innovates to bring cutting-edge agricultural technologies, sustainable practices, and improved crop yields.</p>
+                        </div>
+                    </div>
+                    <div class="service-card-back">
+                        <div class="card-back-content">
+                            <h3>R&D Features</h3>
+                            <ul class="card-features-list">
+                                <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Advanced Breeding Techniques</li>
+                                <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Soil Analysis & Improvement</li>
+                                <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Climate Adaptation Research</li>
+                                <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Sustainable Farming Methods</li>
+                                <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Technology Transfer Programs</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service Card 2: Cultivation -->
+            <div class="service-card-3d scroll-animate">
+                <div class="service-card-inner">
+                    <div class="service-card-front">
+                        <div class="card-front-content">
+                            <div class="card-icon-wrapper">
+                                <div class="card-icon-bg"></div>
+                                <div class="card-icon">
+                                    <svg viewBox="0 0 24 24" fill="#f5a623">
+                                        <path d="M12 22c4.97 0 9-4.03 9-9-4.97 0-9 4.03-9 9zM5.6 10.25c0 1.38 1.12 2.5 2.5 2.5.53 0 1.01-.16 1.42-.44l-.02.19c0 1.38 1.12 2.5 2.5 2.5s2.5-1.12 2.5-2.5l-.02-.19c.4.28.89.44 1.42.44 1.38 0 2.5-1.12 2.5-2.5 0-1-.59-1.85-1.43-2.25.84-.4 1.43-1.25 1.43-2.25 0-1.38-1.12-2.5-2.5-2.5-.53 0-1.01.16-1.42.44l.02-.19C14.5 4.12 13.38 3 12 3S9.5 4.12 9.5 5.5l.02.19c-.4-.28-.89-.44-1.42-.44-1.38 0-2.5 1.12-2.5 2.5 0 1 .59 1.85 1.43 2.25-.84.4-1.43 1.25-1.43 2.25zM12 5.5c1.38 0 2.5 1.12 2.5 2.5s-1.12 2.5-2.5 2.5S9.5 9.38 9.5 8s1.12-2.5 2.5-2.5zM3 13c0 4.97 4.03 9 9 9 0-4.97-4.03-9-9-9z"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <h3 class="card-title">Fruit, Vegetable & Seedling Cultivation</h3>
+                            <p class="card-description">Professional cultivation of fruits, vegetables, seedlings, and medicinal herbs using sustainable organic farming practices for highest quality produce.</p>
+                        </div>
+                    </div>
+                    <div class="service-card-back">
+                        <div class="card-back-content">
+                            <h3>Cultivation Features</h3>
+                            <ul class="card-features-list">
+                                <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Fruit Tree Cultivation</li>
+                                <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Vegetable Production</li>
+                                <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Seedling Propagation</li>
+                                <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Medicinal Herb Cultivation</li>
+                                <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Organic Farming Practices</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service Card 3: Product Processing -->
+            <div class="service-card-3d scroll-animate">
+                <div class="service-card-inner">
+                    <div class="service-card-front">
+                        <div class="card-front-content">
+                            <div class="card-icon-wrapper">
+                                <div class="card-icon-bg"></div>
+                                <div class="card-icon">
+                                    <svg viewBox="0 0 24 24" fill="#00b4d8">
+                                        <path d="M19.43 12.98c.04-.32.07-.64.07-.98s-.03-.66-.07-.98l2.11-1.65c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.3-.61-.22l-2.49 1c-.52-.4-1.08-.73-1.69-.98l-.38-2.65C14.46 2.18 14.25 2 14 2h-4c-.25 0-.46.18-.49.42l-.38 2.65c-.61.25-1.17.59-1.69.98l-2.49-1c-.23-.09-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64l2.11 1.65c-.04.32-.07.65-.07.98s.03.66.07.98l-2.11 1.65c-.19.15-.24.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1c.52.4 1.08.73 1.69.98l.38 2.65c.03.24.24.42.49.42h4c.25 0 .46-.18.49-.42l.38-2.65c.61-.25 1.17-.59 1.69-.98l2.49 1c.23.09.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.65zM12 15.5c-1.93 0-3.5-1.57-3.5-3.5s1.57-3.5 3.5-3.5 3.5 1.57 3.5 3.5-1.57 3.5-3.5 3.5z"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <h3 class="card-title">Agricultural Product Processing & Sales</h3>
+                            <p class="card-description">Complete supply chain management from initial processing to market delivery including fertilizers, machinery, packaging materials, and quality seeds.</p>
+                        </div>
+                    </div>
+                    <div class="service-card-back">
+                        <div class="card-back-content">
+                            <h3>Sales Features</h3>
+                            <ul class="card-features-list">
+                                <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Fertilizer Distribution</li>
+                                <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Agricultural Machinery</li>
+                                <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Packaging Materials</li>
+                                <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Quality Seed Sales</li>
+                                <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Product Quality Assurance</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service Card 4: Farm Management -->
+            <div class="service-card-3d scroll-animate">
+                <div class="service-card-inner">
+                    <div class="service-card-front">
+                        <div class="card-front-content">
+                            <div class="card-icon-wrapper">
+                                <div class="card-icon-bg"></div>
+                                <div class="card-icon">
+                                    <svg viewBox="0 0 24 24" fill="#e63946">
+                                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <h3 class="card-title">Farm Machinery Management & Pest Control</h3>
+                            <p class="card-description">Comprehensive farm management services including machinery hosting, maintenance, pest control, disease prevention, and professional garden maintenance.</p>
+                        </div>
+                    </div>
+                    <div class="service-card-back">
+                        <div class="card-back-content">
+                            <h3>Management Features</h3>
+                            <ul class="card-features-list">
+                                <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Machinery Hosting</li>
+                                <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Pest Control Services</li>
+                                <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Disease Prevention</li>
+                                <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Garden Maintenance</li>
+                                <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Landscaping Services</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service Card 5: E-commerce -->
+            <div class="service-card-3d scroll-animate">
+                <div class="service-card-inner">
+                    <div class="service-card-front">
+                        <div class="card-front-content">
+                            <div class="card-icon-wrapper">
+                                <div class="card-icon-bg"></div>
+                                <div class="card-icon">
+                                    <svg viewBox="0 0 24 24" fill="#6c5ce7">
+                                        <path d="M18.5 3H6c-1.1 0-2 .9-2 2v5.71c0 3.83 2.95 7.18 6.78 7.29 3.96.12 7.22-3.06 7.22-7v-1h.5c1.93 0 3.5-1.57 3.5-3.5S20.43 3 18.5 3zM16 5v3H6V5h10zm2.5 3H18V5h.5c.83 0 1.5.67 1.5 1.5S19.33 8 18.5 8zM4 19h16v2H4v-2z"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <h3 class="card-title">E-commerce Platform</h3>
+                            <p class="card-description">Connect farmers with customers worldwide through our seamless online purchasing and delivery solutions for agricultural products and farm supplies.</p>
+                        </div>
+                    </div>
+                    <div class="service-card-back">
+                        <div class="card-back-content">
+                            <h3>E-commerce Features</h3>
+                            <ul class="card-features-list">
+                                <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Online Product Catalog</li>
+                                <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Secure Payment Processing</li>
+                                <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Global Shipping</li>
+                                <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Order Tracking</li>
+                                <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> 24/7 Customer Support</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service Card 6: Mobile App -->
+            <div class="service-card-3d scroll-animate">
+                <div class="service-card-inner">
+                    <div class="service-card-front">
+                        <div class="card-front-content">
+                            <div class="card-icon-wrapper">
+                                <div class="card-icon-bg"></div>
+                                <div class="card-icon">
+                                    <svg viewBox="0 0 24 24" fill="#00b894">
+                                        <path d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <h3 class="card-title">Mobile Management Application</h3>
+                            <p class="card-description">Powerful mobile app that transforms farm management with comprehensive features accessible from anywhere. Available on iOS and Android.</p>
+                        </div>
+                    </div>
+                    <div class="service-card-back">
+                        <div class="card-back-content">
+                            <h3>App Features</h3>
+                            <ul class="card-features-list">
+                                <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Agricultural R&D Guidance</li>
+                                <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Planting Management</li>
+                                <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Product Sales Tracking</li>
+                                <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Machinery Management</li>
+                                <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> E-commerce Integration</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- App Promotion Section -->
+    <section class="app-promotion-section">
+        <div class="app-content-wrapper">
+            <div class="app-info-section scroll-animate">
+                <h2>Mobile Management Application</h2>
+                <p>Transform your farm management with our powerful mobile application. Available on Google Play and App Store, integrating all our services into one intuitive platform.</p>
+
+                <div class="app-features-grid">
+                    <div class="app-feature-item">
+                        <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                        <span>Agricultural Technology R&D</span>
+                    </div>
+                    <div class="app-feature-item">
+                        <svg viewBox="0 0 24 24"><path d="M12 22c4.97 0 9-4.03 9-9-4.97 0-9 4.03-9 9z"/></svg>
+                        <span>Fruit & Vegetable Planting</span>
+                    </div>
+                    <div class="app-feature-item">
+                        <svg viewBox="0 0 24 24"><path d="M19.43 12.98c.04-.32.07-.64.07-.98s-.03-.66-.07-.98l2.11-1.65c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.3-.61-.22l-2.49 1c-.52-.4-1.08-.73-1.69-.98l-.38-2.65C14.46 2.18 14.25 2 14 2h-4c-.25 0-.46.18-.49.42l-.38 2.65c-.61.25-1.17.59-1.69.98l-2.49-1c-.23-.09-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64l2.11 1.65c-.04.32-.07.65-.07.98s.03.66.07.98l-2.11 1.65c-.19.15-.24.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1c.52.4 1.08.73 1.69.98l.38 2.65c.03.24.24.42.49.42h4c.25 0 .46-.18.49-.42l.38-2.65c.61-.25 1.17-.59 1.69-.98l2.49 1c.23.09.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.65zM12 15.5c-1.93 0-3.5-1.57-3.5-3.5s1.57-3.5 3.5-3.5 3.5 1.57 3.5 3.5-1.57 3.5-3.5 3.5z"/></svg>
+                        <span>Fertilizer & Machinery</span>
+                    </div>
+                    <div class="app-feature-item">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"/></svg>
+                        <span>Pest Control Services</span>
+                    </div>
+                    <div class="app-feature-item">
+                        <svg viewBox="0 0 24 24"><path d="M18.5 3H6c-1.1 0-2 .9-2 2v5.71c0 3.83 2.95 7.18 6.78 7.29 3.96.12 7.22-3.06 7.22-7v-1h.5c1.93 0 3.5-1.57 3.5-3.5S20.43 3 18.5 3zM16 5v3H6V5h10zm2.5 3H18V5h.5c.83 0 1.5.67 1.5 1.5S19.33 8 18.5 8z"/></svg>
+                        <span>E-commerce Platform</span>
+                    </div>
+                    <div class="app-feature-item">
+                        <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        <span>Landscaping Services</span>
+                    </div>
+                </div>
+
+                <div class="app-store-buttons-wrapper">
+                    <a href="#" class="app-store-btn">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92z"/>
+                        </svg>
+                        <div class="app-store-btn-text">
+                            <small>Download on</small>
+                            <strong>Google Play</strong>
+                        </div>
+                    </a>
+                    <a href="#" class="app-store-btn">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+                        </svg>
+                        <div class="app-store-btn-text">
+                            <small>Download on the</small>
+                            <strong>App Store</strong>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="phone-mockup-section scroll-animate">
+                <div class="phone-container">
+                    <div class="phone-glow"></div>
+                    <div class="phone-frame">
+                        <div class="phone-screen-content">
+                            <div class="phone-notch"></div>
+                            <div class="phone-app-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M12 22c4.97 0 9-4.03 9-9-4.97 0-9 4.03-9 9zM5.6 10.25c0 1.38 1.12 2.5 2.5 2.5.53 0 1.01-.16 1.42-.44l-.02.19c0 1.38 1.12 2.5 2.5 2.5s2.5-1.12 2.5-2.5l-.02-.19c.4.28.89.44 1.42.44 1.38 0 2.5-1.12 2.5-2.5 0-1-.59-1.85-1.43-2.25.84-.4 1.43-1.25 1.43-2.25 0-1.38-1.12-2.5-2.5-2.5-.53 0-1.01.16-1.42.44l.02-.19C14.5 4.12 13.38 3 12 3S9.5 4.12 9.5 5.5l.02.19c-.4-.28-.89-.44-1.42-.44-1.38 0-2.5 1.12-2.5 2.5 0 1 .59 1.85 1.43 2.25-.84.4-1.43 1.25-1.43 2.25zM12 5.5c1.38 0 2.5 1.12 2.5 2.5s-1.12 2.5-2.5 2.5S9.5 9.38 9.5 8s1.12-2.5 2.5-2.5zM3 13c0 4.97 4.03 9 9 9 0-4.97-4.03-9-9-9z"/>
+                                </svg>
+                            </div>
+                            <div class="phone-text">
+                                Jingbaodi
+                                <small>Farm Management</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="stats-grid">
+            <div class="stat-item-wrapper scroll-animate">
+                <div class="stat-number-wrapper">
+                    <span class="stat-number" data-count="500">0</span>
+                    <span class="stat-suffix">+</span>
+                </div>
+                <p class="stat-label">Farm Partners</p>
+                <div class="stat-underline"></div>
+            </div>
+            <div class="stat-item-wrapper scroll-animate">
+                <div class="stat-number-wrapper">
+                    <span class="stat-number" data-count="50">0</span>
+                    <span class="stat-suffix">+</span>
+                </div>
+                <p class="stat-label">Products</p>
+                <div class="stat-underline"></div>
+            </div>
+            <div class="stat-item-wrapper scroll-animate">
+                <div class="stat-number-wrapper">
+                    <span class="stat-number" data-count="10000">0</span>
+                    <span class="stat-suffix">+</span>
+                </div>
+                <p class="stat-label">Downloads</p>
+                <div class="stat-underline"></div>
+            </div>
+            <div class="stat-item-wrapper scroll-animate">
+                <div class="stat-number-wrapper">
+                    <span class="stat-number" data-count="15">0</span>
+                    <span class="stat-suffix">+</span>
+                </div>
+                <p class="stat-label">Countries</p>
+                <div class="stat-underline"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section-services">
+        <div class="cta-content-wrapper scroll-animate">
+            <h2>Ready to Transform Your Farm Operations?</h2>
+            <p>Contact us today to learn how our comprehensive agricultural services can help you achieve better yields and sustainable growth.</p>
+            <div class="cta-buttons">
+                <a href="contact.html" class="cta-btn-primary">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                    </svg>
+                    Get in Touch
+                </a>
+                <a href="culture.html" class="cta-btn-secondary">
+                    Learn More About Us
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="images/logo.svg" alt="Jingbaodi Logo" width="50" height="50">
+                        <span>Jingbaodi</span>
+                    </div>
+                    <p class="footer-description">Beijing Jingbaodi Agricultural Science & Technology Co., Ltd. is committed to advancing agricultural technology and providing comprehensive solutions for modern farming operations worldwide.</p>
+                </div>
+                <div>
+                    <h3 class="footer-title">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="culture.html">Our Culture</a></li>
+                        <li><a href="news.html">News & Updates</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="footer-title">Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="services.html">Agricultural R&D</a></li>
+                        <li><a href="services.html">Cultivation</a></li>
+                        <li><a href="services.html">Product Sales</a></li>
+                        <li><a href="services.html">Farm Management</a></li>
+                        <li><a href="services.html">Mobile App</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3 class="footer-title">Contact Info</h3>
+                    <p><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span>3706, Room 407, Shilibao Town Government Office Building, No.67, Xidaqiao Road, Miyun District, Beijing, 100000, China</span></p>
+                    <p><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><span>support@jingboadi.com</span></p>
+                    <p><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg><span>www.jingboadi.com</span></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Beijing Jingbaodi Agricultural Science & Technology Co., Ltd. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <a href="terms-of-service.html">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <button class="back-to-top" aria-label="Back to top">
+        <svg viewBox="0 0 24 24"><path d="M18 15l-6-6-6 6"/></svg>
+    </button>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Counter Animation
+        document.addEventListener('DOMContentLoaded', function() {
+            const counters = document.querySelectorAll('.stat-number');
+            
+            const animateCounter = (counter) => {
+                const target = parseInt(counter.getAttribute('data-count'));
+                const duration = 2000;
+                const step = target / (duration / 16);
+                let current = 0;
+                
+                const updateCounter = () => {
+                    current += step;
+                    if (current < target) {
+                        counter.textContent = Math.floor(current).toLocaleString();
+                        requestAnimationFrame(updateCounter);
+                    } else {
+                        counter.textContent = target.toLocaleString();
+                    }
+                };
+                
+                updateCounter();
+            };
+            
+            const observerOptions = {
+                threshold: 0.5
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const counter = entry.target;
+                        animateCounter(counter);
+                        observer.unobserve(counter);
+                    }
+                });
+            }, observerOptions);
+            
+            counters.forEach(counter => observer.observe(counter));
+        });
+    </script>
+</body>
+</html>
